@@ -1,0 +1,28 @@
+{
+  "name": "telegram-scheduler",
+  "version": "1.0.0",
+  "description": "Robô que dispara notificações no Telegram conforme lista de horários.",
+  "main": "server.js",
+  "author": "João Victor Moreira",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "dev:debug": "nodemon --inspect src/server.js",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "cron": "^1.8.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.28",
+    "pouchdb": "^7.2.1",
+    "pouchdb-debug": "^7.2.1",
+    "pouchdb-find": "^7.2.1",
+    "telegraf": "^3.37.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2",
+    "sucrase": "^3.13.0"
+  }
+}
