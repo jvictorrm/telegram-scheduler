@@ -77,18 +77,19 @@ export default new WizardScene(
 
           try {
             const lineTypeSignalRegex = line.match(regexHelper.typeSignal);
-            if (typeSignalRegex) {
+            if (lineTypeSignalRegex) {
               typeSignal = `${lineTypeSignalRegex[3]}${lineTypeSignalRegex[4]}`;
             }
 
             const lineSignalRegex = line.match(regexHelper.signal);
-            if (lineSignalRegex)
+            if (lineSignalRegex) {
               signals.push({
                 typeSignal,
                 signal: lineSignalRegex[2],
                 text: lineSignalRegex[4],
                 time: lineSignalRegex[6],
               });
+            }
           } catch (error) {
             throw new Error("Formato linha SINAL inválido");
           }
